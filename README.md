@@ -7,7 +7,7 @@ the data was forked from here https://github.com/lstearns86/clothing-pattern-dat
 
 ### Implemented:
   - Pre-processing. Basically get all the images and convert it to a data frame
-  - First model using MLP
+  - First model using MLP (Multilayer Perceptron)
 
 ### To be implemented:
   - Confusion matrix
