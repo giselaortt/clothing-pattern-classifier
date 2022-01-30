@@ -13,3 +13,9 @@ the data was forked from here https://github.com/lstearns86/clothing-pattern-dat
   - Confusion matrix
   - More models
   - Cross validation
+
+### Tecnologies:
+- Opencv
+- Sklearn
+- numpy
+- pandas
