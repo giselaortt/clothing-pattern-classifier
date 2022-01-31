@@ -6,6 +6,7 @@ from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import OrdinalEncoder
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
+import numpy as np
 
 
 def getUniqueValues( array ):
@@ -13,23 +14,21 @@ def getUniqueValues( array ):
     return list(set(array))
 
 
-def formatConfusionMatrix( expected, predicted ):
-    labels = getUniqueValues(expected)
-    answer = pd.DataFrame( confusion_matrix(expected, predicted, labels), columns = labels, index = labels )
+def formatConfusionMatrix( predictions ):
+    labels = getUniqueValues( predictions['expected'].values )
+    answer = pd.DataFrame( confusion_matrix(predictions['expected'].values, predictions['predictions'].values, labels = labels), columns = labels, index = labels )
 
     return answer
 
 
-def evaluateAccuracyPerClass( predictions, expected ):
-    predictions = pd.DataFrame(predictions)
-    expected = pd.DataFrame(expected)
-    classes = getUniqueValues(expected)
+def evaluateAccuracyPerClass( predictions ):
+    classes = getUniqueValues(predictions['expected'])
     number_of_classes = len(classes)
     answer = pd.Series( np.zeros(number_of_classes, dtype=float) )
     answer.index = classes
 
     for className in classes:
-        acc = accuracy_score( predictions[ expected==className ], expected[ expected==className ])
+        acc = accuracy_score( predictions['expected'][ predictions['expected']==className ], predictions['predictions'][ predictions['expected']==className ])
         print( "current class is", className )
         print("accuracy = ", acc)
         answer[className]=acc
@@ -37,47 +36,33 @@ def evaluateAccuracyPerClass( predictions, expected ):
     return answer
 
 
-def createReports( expected, predicted ):
-    data = evaluateAccuracyPerClass(expected, predicted)
+def createReports( predictions ):
+    data = evaluateAccuracyPerClass( predictions )
     data.to_csv("class_accuracy.csv")
-    data = formatConfusionMatrix( expected, predicted )
+    data = formatConfusionMatrix( predictions )
     data.to_csv("confusion_matrix.csv")
 
 
-if __name__ == '__main__':
-
-    print("loading the data")
-
+def runModel():
     data = pd.read_csv( "data.csv" )
-
-    print("preprocessing")
-
     ordinal_encoder = OrdinalEncoder()
-    dataframe[columns] = ordinal_encoder.fit_transform(dataframe[columns])
-    ordinal_encoder.fit_transform(classes)
-
+    data['labels'] = ordinal_encoder.fit_transform(data['labels'].values.reshape(-1, 1))
     y = data['labels']
     data.drop('labels', axis=1, inplace = True)
-
-    print("defining the model")
-
-    model = MLPClassifier( hidden_layer_sizes=(1,50), random_state = 7 )
-
-    print("spliting the data")
-
+    model = MLPClassifier( hidden_layer_sizes=(50,50,50), random_state = 7, max_iter = 1000 )
+    #trainx, testx, trainy, testy
     trainx, testx, trainy, testy = train_test_split(data,y,train_size=0.7)
-
-    print("training")
-
     model.fit( trainx, trainy )
-
-    print("predictind ... ")
-
     predictions = model.predict( testx )
-
     print(accuracy_score(predictions,testy) )
-
-    predictions = pd.DataFrame(ordinal_encoder.inverse_transform(predictions))
-    predictions["expected"] = testy
+    print("shapes should match", predictions.shape,testy.shape)
+    predictions = pd.DataFrame(ordinal_encoder.inverse_transform(predictions.reshape(-1, 1)))
+    predictions["expected"] = ordinal_encoder.inverse_transform(testy.reshape(-1, 1))
     predictions.columns = ["predictions", "expected"]
     predictions.to_csv( "predictions.csv" )
+
+
+if __name__ == '__main__':
+    predictions = pd.read_csv("testing_data.csv")
+    createReports(predictions)
+    #runModel()
