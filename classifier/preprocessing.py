@@ -8,7 +8,7 @@ import pandas as pd
 
 def openImageAsArray( path ):
 
-    return cv2.imread(path).flatten()
+    return cv2.imread(path, cv2.IMREAD_GRAYSCALE).flatten()
 
 
 def listFilePaths( path ):
