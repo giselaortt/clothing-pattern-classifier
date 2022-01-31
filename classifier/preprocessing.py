@@ -14,6 +14,7 @@ def openImageAsArray( path ):
 def listFilePaths( path ):
     ans = []
     files = os.listdir( path )
+
     for fileName in files:
         ans.append( path+"/"+fileName )
 
