@@ -8,13 +8,13 @@ the data was forked from here https://github.com/lstearns86/clothing-pattern-dat
 ### Implemented:
   - Pre-processing. Basically get all the images and convert it to a data frame
   - First model using MLP (Multilayer Perceptron)
+  - Function to measure accuracy
+  - Confusion matrix
+  - Use numbers instead of strings for the classes to implove efficiency
 
 ### To be implemented:
-  - Confusion matrix
   - More models
   - Cross validation
-  - function to measure acuracia
-  - use numbers instead of strings for the classes to implove efficiency
 
 ### Tecnologies:
 - Opencv
