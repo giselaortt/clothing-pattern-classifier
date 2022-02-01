@@ -63,6 +63,6 @@ def runModel():
 
 
 if __name__ == '__main__':
-    #predictions = pd.read_csv("testing_data.csv")
-    #createReports(predictions)
-    runModel()
+    predictions = pd.read_csv("predictions.csv")
+    createReports(predictions)
+    #runModel()
