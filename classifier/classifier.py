@@ -54,15 +54,15 @@ def runModel():
     trainx, testx, trainy, testy = train_test_split(data,y,train_size=0.7)
     model.fit( trainx, trainy )
     predictions = model.predict( testx )
-    print(accuracy_score(predictions,testy) )
+    print(accuracy_score(np.array(predictions),np.array(testy)) )
     print("shapes should match", predictions.shape,testy.shape)
     predictions = pd.DataFrame(ordinal_encoder.inverse_transform(predictions.reshape(-1, 1)))
-    predictions["expected"] = ordinal_encoder.inverse_transform(testy.reshape(-1, 1))
+    predictions["expected"] = ordinal_encoder.inverse_transform(testy.values.reshape(-1, 1))
     predictions.columns = ["predictions", "expected"]
     predictions.to_csv( "predictions.csv" )
 
 
 if __name__ == '__main__':
-    predictions = pd.read_csv("testing_data.csv")
-    createReports(predictions)
-    #runModel()
+    #predictions = pd.read_csv("testing_data.csv")
+    #createReports(predictions)
+    runModel()
