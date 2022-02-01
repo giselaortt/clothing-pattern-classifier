@@ -22,7 +22,7 @@ the data was forked from here https://github.com/lstearns86/clothing-pattern-dat
 
 ### Results:
 
-##### First run: simple MLP with 3 hidden layers with 50 neurons each
+##### First run: simple MLP with 3 hidden layers with 50 neurons each, using black and white version of the images
 
 accuracy per class:
 
