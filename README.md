@@ -13,6 +13,7 @@ the data was forked from here https://github.com/lstearns86/clothing-pattern-dat
 ### To be implemented:
   - Use a model with deeplearning
   - Cross validation
+  - switch to tensorflow
 
 ### Tecnologies:
 - Opencv
