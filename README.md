@@ -13,7 +13,7 @@ the data was forked from here https://github.com/lstearns86/clothing-pattern-dat
   - Use numbers instead of strings for the classes to implove efficiency
 
 ### To be implemented:
-  - More models
+  - Use a model with deeplearning
   - Cross validation
 
 ### Tecnologies:
