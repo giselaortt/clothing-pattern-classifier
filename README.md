@@ -26,16 +26,11 @@ the data was forked from here https://github.com/lstearns86/clothing-pattern-dat
 
 accuracy per class:
 
-  dotted,0.4444444444444444
-  
-  solid,0.4166666666666667
-  
-  striped,0.1
-  
-  checkered,0.16
-  
-  floral,0.5161290322580645
-  
-  zig zag,0.08695652173913043
+  dotted: 0.444444444444444
+  solid: 0.4166666666666667
+  striped: 0.1
+  checkered: 0.16
+  floral: 0.5161290322580645
+  zig zag: 0.08695652173913043
   
 
