@@ -1,5 +1,5 @@
 import numpy as np
-#import tensorflow as tf
+import tensorflow as tf
 from tensorflow.keras.preprocessing import image_dataset_from_directory
 from keras.applications.vgg16 import VGG16
 import matplotlib.pyplot as plt
@@ -7,6 +7,7 @@ from tensorflow import keras
 from tensorflow.keras import layers
 import pandas as pd
 import matplotlib.pyplot as plt
+import tensorflow.keras.metrics as metrics
 
 
 # Load training and validation sets
@@ -42,8 +43,8 @@ model.add(layers.Dense(1, activation='sigmoid'))
 
 model.compile(
     optimizer='adam',
-    loss='binary_crossentropy',
-    metrics=['binary_accuracy'],
+    loss='categorical_crossentropy',
+    metrics=[metrics.CategoricalAccuracy()],
 )
 
 history = model.fit(
