@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 # Load training and validation sets
 ds_train = image_dataset_from_directory(
-    '../database/FingerCamera',
+    '../database/train_folder',
     labels='inferred',
     image_size=[224, 224], #decreasing the images to increase speed
     interpolation='nearest', #nearest requires smaller computational power
@@ -32,13 +32,11 @@ pretrained_layers =VGG16()
 pretrained_layers.trainable = False
 
 model = keras.Sequential( pretrained_layers.layers )
-#model.add(layers.Flatten())
-'''
+
 for i, layer in enumerate(model.layers):
-    ...:     # layer.name = 'layer_' + str(i)    <-- old way
-    ...:     layer._name = 'layer_' + str(i)
-In [10]: model.summary()
-'''
+    layer._name = 'layer_' + str(i)
+
+model.add(layers.Flatten())
 model.add( layers.Dense(6, activation='relu'))
 model.add(layers.Dense(1, activation='sigmoid'))
 
@@ -54,6 +52,7 @@ history = model.fit(
     epochs=30,
     verbose=0,
 )
+
 plt.figure()
 history_frame = pd.DataFrame(history.history)
 history_frame.loc[:, ['loss', 'val_loss']].plot()
