@@ -31,7 +31,7 @@ ds_valid = image_dataset_from_directory(
 pretrained_layers =VGG16()
 pretrained_layers.trainable = False
 
-model = keras.Sequential( pretrained_layers.layers[:-1] )
+model = keras.Sequential( pretrained_layers.layers )
 
 for i, layer in enumerate(model.layers):
     layer._name = 'layer_' + str(i)
