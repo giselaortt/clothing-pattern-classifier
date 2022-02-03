@@ -25,7 +25,7 @@ the data was forked from here https://github.com/lstearns86/clothing-pattern-dat
 
 #### First run: simple MLP with 3 hidden layers with 50 neurons each, using black and white version of the images
 
-The first run was made for comparison purposes with more refined models.
+The first run was made for comparison purposes. I wanted to know how a very simple model compares with a more refined one.
 
 accuracy per class:
 
