@@ -57,5 +57,10 @@ history = model.fit(
 plt.figure()
 history_frame = pd.DataFrame(history.history)
 history_frame.loc[:, ['loss', 'val_loss']].plot()
-history_frame.loc[:, ['binary_accuracy', 'val_binary_accuracy']].plot()
-plt.show()
+plt.savefig('loss_evolution.png')
+print(history_frame.columns)
+history_frame.loc[:, ['categorical_accuracy', 'val_categorical_accuracy']].plot()
+plt.savefig('accuracy_evolution.png')
+
+
+#plt.show()
