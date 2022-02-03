@@ -12,8 +12,9 @@ the data was forked from here https://github.com/lstearns86/clothing-pattern-dat
   - switch to tensorflow
 
 ### To be implemented:
-  - Use a model with deeplearning
   - Cross validation
+- parameter tunning
+- image ensamble to increase the number of entries
 
 ### Tecnologies:
 - Opencv
@@ -39,4 +40,5 @@ accuracy per class:
   
 #### Second run with tensorflow:
 
-  Results are can be seem on the plots on folder version 2. Needs  further investigation and model tunning.
+  Results are can be seem on the plots on folder version 2. Needs further investigation and model tunning.
+
