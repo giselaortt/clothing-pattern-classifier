@@ -40,5 +40,9 @@ accuracy per class:
   
 #### Second run with tensorflow:
 
-  Results are can be seem on the plots on folder version 2. Needs further investigation and model tunning.
+  Results are can be seem on the plots bellow. Needs further investigation and paramether tunning.
+
+![loss plot](/version-two/loss_evolution.png)
+
+![accuracy plot](/version-two/accuracy_evolution.png)
 
