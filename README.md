@@ -20,6 +20,7 @@ the data was forked from here https://github.com/lstearns86/clothing-pattern-dat
 - Sklearn
 - numpy
 - pandas
+- tensorflow
 
 ### Results:
 
