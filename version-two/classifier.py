@@ -21,7 +21,7 @@ ds_train = image_dataset_from_directory(
 )
 
 ds_valid = image_dataset_from_directory(
-    '../database/FingerCamera',
+    '../database/test_folder',
     labels='inferred',
     image_size=[224, 224], #decreasing the images to increase speed
     interpolation='nearest', #nearest requires smaller computational power
