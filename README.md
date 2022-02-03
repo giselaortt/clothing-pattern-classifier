@@ -23,7 +23,7 @@ the data was forked from here https://github.com/lstearns86/clothing-pattern-dat
 
 ### Results:
 
-##### First run: simple MLP with 3 hidden layers with 50 neurons each, using black and white version of the images
+#### First run: simple MLP with 3 hidden layers with 50 neurons each, using black and white version of the images
 
 The first run was made for comparison purposes with more refined models.
 
@@ -36,6 +36,6 @@ accuracy per class:
   floral: 0.5161290322580645
   zig zag: 0.08695652173913043
   
-##### Second run with tensorflow:
+#### Second run with tensorflow:
 
   Results are can be seem on the plots on folder version 2. Needs  further investigation.
