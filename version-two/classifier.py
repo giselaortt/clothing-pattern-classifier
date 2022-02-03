@@ -58,7 +58,6 @@ plt.figure()
 history_frame = pd.DataFrame(history.history)
 history_frame.loc[:, ['loss', 'val_loss']].plot()
 plt.savefig('loss_evolution.png')
-print(history_frame.columns)
 history_frame.loc[:, ['categorical_accuracy', 'val_categorical_accuracy']].plot()
 plt.savefig('accuracy_evolution.png')
 
