@@ -9,11 +9,11 @@ the data was forked from here https://github.com/lstearns86/clothing-pattern-dat
   - Function to measure accuracy
   - Confusion matrix
   - Use numbers instead of strings for the classes to implove efficiency
+  - switch to tensorflow
 
 ### To be implemented:
   - Use a model with deeplearning
   - Cross validation
-  - switch to tensorflow
 
 ### Tecnologies:
 - Opencv
@@ -25,6 +25,8 @@ the data was forked from here https://github.com/lstearns86/clothing-pattern-dat
 
 ##### First run: simple MLP with 3 hidden layers with 50 neurons each, using black and white version of the images
 
+The first run was made for comparison purposes with more refined models.
+
 accuracy per class:
 
   dotted: 0.444444444444444
@@ -34,4 +36,6 @@ accuracy per class:
   floral: 0.5161290322580645
   zig zag: 0.08695652173913043
   
+##### Second run with tensorflow:
 
+  Results are can be seem on the plots on folder version 2. Needs  further investigation.
