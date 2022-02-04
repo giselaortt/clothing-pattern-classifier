@@ -14,8 +14,6 @@ the data was forked from here https://github.com/lstearns86/clothing-pattern-dat
 
 ## To be implemented:
   - Cross validation
-- parameter tunning
-- image ensamble to increase the number of entries
 
 ## Tecnologies:
 - Opencv
