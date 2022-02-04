@@ -40,7 +40,7 @@ accuracy per class:
   
 #### Second run with tensorflow:
 
-  Results are can be seem on the plots bellow. Needs further investigation and paramether tunning.
+  Results can be seem on the plots bellow. I am really cetic about the result but could find nothing wrong with the code.
 
 ![loss plot](/version-two/loss_evolution.png)
 
