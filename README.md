@@ -1,5 +1,7 @@
 # Image Classifier for clothing patterns
 
+Applying the concepts I learned from kaglle course on computer vision. I took this small just to practice a bit.
+
 ### Data:
 the data was forked from here https://github.com/lstearns86/clothing-pattern-dataset
 
@@ -39,7 +41,7 @@ accuracy per class:
   
 ### Second run with tensorflow:
 
-  Results can be seem on the plots bellow. I am really cetic about the result but could find nothing wrong with the code.
+  Results can be seem on the plots bellow. I am really skeptic about the result but could find nothing wrong with the code. Maybe this dataset is easy to predict for such a powerfull network as VG16 from tensorflow.
 
 ![loss plot](/version-two/loss_evolution.png)
 
