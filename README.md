@@ -1,6 +1,6 @@
 # Image Classifier for clothing patterns
 
-Applying the concepts I learned from kaglle course on computer vision. I took this small just to practice a bit.
+Applying the concepts I learned from kaglle course on computer vision. I took this small problem just to practice a bit.
 
 ### Data:
 the data was forked from here https://github.com/lstearns86/clothing-pattern-dataset
